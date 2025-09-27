@@ -138,6 +138,9 @@ All colors MUST be HSL.
   /* Animations */
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-gradient: animate-gradient 6s ease infinite;
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animate-shimmer: shimmer 2s ease-in-out infinite;
 }
 
 @keyframes accordion-down {
@@ -237,4 +240,104 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Enhanced animations for visual improvements */
+@keyframes animate-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Animation classes */
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: animate-gradient 6s ease infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in-up 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in-up 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Improved neon effects */
+.neon-glow {
+  box-shadow:
+    0 0 5px hsl(var(--accent)),
+    0 0 10px hsl(var(--accent)),
+    0 0 20px hsl(var(--accent)),
+    0 0 40px hsl(var(--accent) / 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.neon-glow:hover {
+  box-shadow:
+    0 0 5px hsl(var(--accent)),
+    0 0 15px hsl(var(--accent)),
+    0 0 30px hsl(var(--accent)),
+    0 0 60px hsl(var(--accent) / 0.7);
+}
+
+/* Gradient text enhancement */
+.gradient-text {
+  background: var(--gradient-purple-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: animate-gradient 4s ease infinite;
 }
