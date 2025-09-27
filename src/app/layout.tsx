@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "Aurora Digital - Innovation Unleashed",
+  description: "Transforming visions into digital realities with cutting-edge design and immersive experiences. Dark imagery showcase featuring futuristic web development and creative solutions.",
 };
 
 export default function RootLayout({
@@ -35,8 +35,8 @@ export default function RootLayout({
         <QueryProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            defaultTheme="dark"
+            enableSystem={false}
             disableTransitionOnChange
           >
             <TooltipProvider>
